@@ -82,4 +82,10 @@ export class CreateUpdateProductComponent implements OnInit {
     }
   }
 
+  onKeyPress(event) {
+    const { key, target: { value: inputValue, selectionStart } } = event;
+    const value = [...inputValue.slice(0, selectionStart), key, ...inputValue.slice(selectionStart)].join('');
+    return /^\d+([\.\,]\d*)?$/.test(value);
+  }
+
 }

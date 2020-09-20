@@ -39,7 +39,7 @@
           <div class="form-group">
             <mat-form-field>
               <input matInput placeholder="Prix de vente" formControlName="price"
-                onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 44"
+              (keypress)="onKeyPress($event)"
                 numberFormatter required />
               <mat-error *ngIf="productForm.getError('required','price')">{{REQUIRED_MESSAGE}}</mat-error>
             </mat-form-field>
